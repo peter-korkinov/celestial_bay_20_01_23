@@ -44,6 +44,13 @@ INSTALLED_APPS = [
     'galaxies',
 ]
 
+# User substitution
+# https://docs.djangoproject.com/en/1.11/topics/auth/customizing/#auth-custom-user
+
+# Substituting the default Django user with a custom one that uses
+# email for authentication instead of username.
+AUTH_USER_MODEL = 'auth.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
