@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'celestial_bay.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'celestial_bay_db_20_01_23',
+        'USER': 'postgres',
+        'PASSWORD': '142536mm',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
