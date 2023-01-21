@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
-    'auth',
+    'my_auth',
     'galaxies',
 ]
 
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 
 # Substituting the default Django user with a custom one that uses
 # email for authentication instead of username.
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'my_auth.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
