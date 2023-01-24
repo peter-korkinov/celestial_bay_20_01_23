@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+from os import path as os_path
 from datetime import timedelta
 from pathlib import Path
 
@@ -157,3 +158,10 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True,
 }
+
+
+# !!! DEV !!!
+# for django development server to serve media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os_path.join(BASE_DIR)
+
