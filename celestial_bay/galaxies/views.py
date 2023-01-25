@@ -26,3 +26,21 @@ class ConstellationViewSet(FlexFieldsMixin, ReadOnlyModelViewSet):
 class ConstellationImageViewSet(FlexFieldsMixin, ReadOnlyModelViewSet):
     serializer_class = ConstellationImageSerializer
     queryset = ConstellationImage.objects.all()
+
+
+class GalaxyViewSet(FlexFieldsModelViewSet):
+    serializer_class = GalaxySerializer
+    permit_list_expands = ['images']
+
+    def get_queryset(self):
+        queryset = Galaxy.objects.all()
+
+        if is_expanded(self.request, 'images'):
+            queryset = queryset.prefetch_related('images')
+
+        return queryset
+
+
+class GalaxyImageViewSet(FlexFieldsModelViewSet):
+    serializer_class = GalaxyImageSerializer
+    queryset = GalaxyImage.objects.all()
