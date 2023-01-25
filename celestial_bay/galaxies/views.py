@@ -44,3 +44,26 @@ class GalaxyViewSet(FlexFieldsModelViewSet):
 class GalaxyImageViewSet(FlexFieldsModelViewSet):
     serializer_class = GalaxyImageSerializer
     queryset = GalaxyImage.objects.all()
+
+
+class PostViewSet(FlexFieldsModelViewSet):
+    serializer_class = PostSerializer
+    permit_list_expands = ['images']
+
+    def get_queryset(self):
+        queryset = Post.objects.all()
+
+        if is_expanded(self.request, 'images'):
+            queryset = queryset.prefetch_related('images')
+
+        return queryset
+
+
+class PostImageViewSet(FlexFieldsModelViewSet):
+    serializer_class = PostImageSerializer
+    queryset = PostImage.objects.all()
+
+
+class CommentViewSet(FlexFieldsModelViewSet):
+    serializer_class = CommentSerializer
+    queryset = Comment.objects.all()
