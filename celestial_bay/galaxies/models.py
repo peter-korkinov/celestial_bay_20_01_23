@@ -28,3 +28,43 @@ class ConstellationImage(models.Model):
 
     def __str__(self):
         return f'{self.pk} pic of constellation {self.constellation.name}'
+
+
+class Galaxy(models.Model):
+    name = models.CharField(max_length=64, unique=True)
+    name_origin = models.TextField()
+    galaxy_type = models.CharField(max_length=32)
+    distance = models.FloatField()
+    apparent_magnitude = models.FloatField(blank=True)
+    size = models.FloatField(blank=True)
+    notes = models.TextField(blank=True)
+    owner = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='galaxies'
+    )
+    constellation = models.ForeignKey(
+        Constellation,
+        on_delete=models.PROTECT,
+        related_name='galaxies'
+    )
+
+    def __str__(self):
+        return f'{self.pk} - {self.name}'
+
+
+class GalaxyImage(models.Model):
+    galaxy = models.ForeignKey(
+        Galaxy,
+        on_delete=models.CASCADE,
+        related_name='images'
+    )
+    image = VersatileImageField(
+        'Image',
+        upload_to='images/',
+        ppoi_field='image_ppoi'
+    )
+    image_ppoi = PPOIField()
+
+    def __str__(self):
+        return f'{self.pk} pic of galaxy {self.galaxy.name}'
