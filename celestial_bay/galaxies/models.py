@@ -68,3 +68,55 @@ class GalaxyImage(models.Model):
 
     def __str__(self):
         return f'{self.pk} pic of galaxy {self.galaxy.name}'
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=256)
+    content = models.TextField()
+    created = models.DateField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
+    author = models.ForeignKey(
+        User,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='posts'
+    )
+
+    def __str__(self):
+        return f'{self.pk} - {self.title} by {self.author.name}'
+
+
+class PostImage(models.Model):
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name='images'
+    )
+    image = VersatileImageField(
+        'Image',
+        upload_to='images/',
+        ppoi_field='image_ppoi'
+    )
+
+    def __str__(self):
+        return f'{self.pk} pic of post {self.post.title}'
+
+
+class Comment(models.Model):
+    content = models.TextField()
+    created = models.DateField(auto_now_add=True)
+    updated = models.DateField(auto_now=True)
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name='comments'
+    )
+    author = models.ForeignKey(
+        User,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name='comments'
+    )
+
+    def __str__(self):
+        return f'{self.pk} comment in {self.post.title}'
