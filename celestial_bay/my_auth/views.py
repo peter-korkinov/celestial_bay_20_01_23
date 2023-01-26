@@ -6,8 +6,8 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from .models import User
-from .serializers import RegisterSerializer, ChangePasswordSerializer,\
-    UpdateUserSerializer
+from .serializers import RegisterSerializer, ChangePasswordSerializer, \
+    UpdateUserSerializer, UserSerializer
 
 
 class RegisterView(generics.CreateAPIView):
@@ -63,3 +63,14 @@ class LogoutView(APIView):
         except Exception as e:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
+
+class UserView(generics.RetrieveAPIView):
+    """
+    For getting a user's info.
+    
+    It inherits from generics.RetrieveAPIView and supports GET queries only for
+    single user by user id.
+    """
+
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
