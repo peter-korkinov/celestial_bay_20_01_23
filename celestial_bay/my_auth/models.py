@@ -1,3 +1,5 @@
+from uuid import uuid4
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.utils.translation import gettext_lazy as _
@@ -55,9 +57,11 @@ class UserManager(BaseUserManager):
 
 class User(AbstractUser):
     """
-    Custom user model using email for authentication instead of username.
+    Custom user model using email for authentication instead of username and
+    uuid primary key.
     """
 
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     username = None
     email = models.EmailField(_('email address'), unique=True)
 
