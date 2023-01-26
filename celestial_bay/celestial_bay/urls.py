@@ -8,12 +8,13 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 from galaxies.views import ConstellationViewSet, ConstellationImageViewSet,\
-    GalaxyViewSet, PostViewSet, GalaxyImageViewSet, PostImageViewSet
+    GalaxyViewSet, PostViewSet, GalaxyImageViewSet, PostImageViewSet, CommentViewSet
 
 router = DefaultRouter()
 router.register(r'constellations', ConstellationViewSet, basename='Constellations')
 router.register(r'galaxies', GalaxyViewSet, basename='Galaxies')
 router.register(r'posts', PostViewSet, basename='Posts')
+router.register(r'comments', CommentViewSet, basename='Comments')
 router.register(r'constellation_images', ConstellationImageViewSet, basename='Constellation Images')
 router.register(r'galaxy_images', GalaxyImageViewSet, basename='Galaxy Images')
 router.register(r'post_images', PostImageViewSet, basename='Post Images')
