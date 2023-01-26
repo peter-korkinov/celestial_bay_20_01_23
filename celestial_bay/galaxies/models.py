@@ -27,7 +27,7 @@ class ConstellationImage(models.Model):
     image_ppoi = PPOIField()
 
     def __str__(self):
-        return f'{self.pk} pic of constellation {self.constellation.name}'
+        return f'{self.pk} pic of constellation - {self.constellation.name}'
 
 
 class Galaxy(models.Model):
@@ -67,7 +67,7 @@ class GalaxyImage(models.Model):
     image_ppoi = PPOIField()
 
     def __str__(self):
-        return f'{self.pk} pic of galaxy {self.galaxy.name}'
+        return f'{self.pk} pic of galaxy - {self.galaxy.name}'
 
 
 class Post(models.Model):
@@ -83,7 +83,7 @@ class Post(models.Model):
     )
 
     def __str__(self):
-        return f'{self.pk} - {self.title} by {self.author.name}'
+        return f'{self.pk} - {self.title} - by - {self.author.get_full_name()}'
 
 
 class PostImage(models.Model):
@@ -97,9 +97,10 @@ class PostImage(models.Model):
         upload_to='images/',
         ppoi_field='image_ppoi'
     )
+    image_ppoi = PPOIField()
 
     def __str__(self):
-        return f'{self.pk} pic of post {self.post.title}'
+        return f'{self.pk} pic of post - {self.post.title}'
 
 
 class Comment(models.Model):
@@ -119,4 +120,4 @@ class Comment(models.Model):
     )
 
     def __str__(self):
-        return f'{self.pk} comment in {self.post.title}'
+        return f'{self.pk} comment in - {self.post.title}'
