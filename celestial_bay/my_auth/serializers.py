@@ -3,6 +3,8 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 
+from rest_flex_fields import FlexFieldsModelSerializer
+
 from .models import User
 
 
@@ -152,3 +154,21 @@ class UpdateUserSerializer(serializers.ModelSerializer):
         instance.save()
 
         return instance
+
+
+class UserSerializer(FlexFieldsModelSerializer):
+    """
+    For retrieving the user info.
+
+    It inherits from the DRF-FlexFields' FlexFieldsModelSerializer
+
+    fields: pk, first_name, last_name, date_joined, last_login
+    expandable fields: galaxies
+    """
+
+    class Meta:
+        model = User
+        fields = ['pk', 'first_name', 'last_name', 'date_joined', 'last_login']
+        expandable_fields = {
+            'galaxies': ('galaxies.GalaxySerializer', {'many': True})
+        }
