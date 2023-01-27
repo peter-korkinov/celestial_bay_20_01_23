@@ -47,12 +47,20 @@ To run the program in local server use the following command
 ```bash
 python manage.py runserver
 ```
+If you encounter
+```
+ImportError('failed to find libmagic.  Check your installation')
+```
+you can try
+```
+pip uninstall python-magic
+```
 &nbsp;
 
 
 Then go to [http://localhost:8000/](http://localhost:8000/) in your browser
 
-To access the OpenAPI documentation open:
+To access the **OpenAPI** documentation open:
 [http://localhost:8000/api/schema/swagger-ui/](http://localhost:8000/api/schema/swagger-ui/)
 
 &nbsp;
