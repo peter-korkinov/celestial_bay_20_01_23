@@ -1,4 +1,12 @@
-This is Django Rest API portfolio project
+#### OpenAPI documentation available
+
+This is Django Rest API back-end project. Within it users can register a profile. Then they can create records of the galaxies they own containing data of the galaxy's properties and images of it. Users can also create posts with images and comment under them. It is set up by default for use with PostgreSQL.
+
+It contains two apps - "my_auth" and "galaxies".
+
+"my_auth" has a custom user model with email instead of username and uuid pk. It has funtionality for registering new users, authentication via JSON Web Token using the SimpleJWT library, changing password, updating and retrieving user info and logout.
+
+"galaxies" has two main models - Galaxy and Post, five auxiliary ones - GalaxyImage, PostImage, Comment, Constellation and ConstellationImage. Their instances are available as read-only unless the user is authenticated as their owner.
 
 ## Requirements
 
