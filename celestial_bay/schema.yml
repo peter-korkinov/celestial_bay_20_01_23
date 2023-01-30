@@ -271,23 +271,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -334,23 +339,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -396,23 +406,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -453,23 +468,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -521,23 +541,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -588,23 +613,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -763,23 +793,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -828,23 +863,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -892,23 +932,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -951,23 +996,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1021,23 +1071,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1090,23 +1145,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1143,23 +1203,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1206,23 +1271,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1268,23 +1338,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1325,23 +1400,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1393,23 +1473,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1460,23 +1545,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1513,23 +1603,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1576,23 +1671,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1638,23 +1738,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1695,23 +1800,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1763,23 +1873,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1830,23 +1945,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1885,23 +2005,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -1950,23 +2075,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -2014,23 +2144,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -2073,23 +2208,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -2143,23 +2283,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
@@ -2212,23 +2357,28 @@ paths:
         It provides full functionality for the authenticated owner of the object,
         and read-only options for all other users - authenticated or not.
 
-        ~~~
+
         Extends FlexFieldModelViewSet and is able to dynamically set fields.
 
         Select a subset of fields by either:
-            specifying which ones should be included
-                e.g.  https://api.example.org/galaxies/?fields=pk,name
-            specifying which ones should be excluded
-                e.g.  https://api.example.org/galaxies/?omit=pk,name
+        specifying which ones should be included
+
+            e.g.  https://api.example.org/galaxies/?fields=pk,name
+
+        specifying which ones should be excluded
+
+            e.g.  https://api.example.org/galaxies/?omit=pk,name
 
         Easily set up fields that be expanded to their fully serialized counterparts
         via query parameters (users/?expand=organization,friends)
+
             e.g.  https://api.example.org/galaxies/?expand=images
 
         Use dot notation to dynamically modify fields at arbitrary depths
+
             e.g. https://api.example.org/constellations/?expand=galaxies.images
 
-        ~~~
+
         Uses CustomLimitOffsetPagination with default page size of 10 and maximum
         of 50.
 
