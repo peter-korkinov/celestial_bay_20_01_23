@@ -1,9 +1,12 @@
+from django.contrib.auth.models import update_last_login
 from django.contrib.auth.password_validation import validate_password
 
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 
 from rest_flex_fields import FlexFieldsModelSerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.settings import api_settings
 
 from .models import User
 
@@ -54,6 +57,31 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    """
+    Extends the SimpleJWT's TokenObtainPairSerializer by adding user info(id,
+    first_name, last_name, email), beside the access and refresh tokens, to  the
+    response.
+    """
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        data['user'] = {
+            'id': self.user.id,
+            "first_name": self.user.first_name,
+            "last_name": self.user.last_name,
+            "email": self.user.email,
+        }
+        refresh = self.get_token(self.user)
+
+        data["refresh"] = str(refresh)
+        data["access"] = str(refresh.access_token)
+
+        if api_settings.UPDATE_LAST_LOGIN:
+            update_last_login(None, self.user)
+
+        return data
 
 
 class ChangePasswordSerializer(serializers.ModelSerializer):
