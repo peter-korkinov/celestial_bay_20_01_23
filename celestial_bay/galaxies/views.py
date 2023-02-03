@@ -23,7 +23,7 @@ class IsOwnerOfObjectOrReadOnly(BasePermission):
         safe_methods = ('GET', 'HEAD', 'OPTIONS')
         if request.method in safe_methods:
             return True
-        return obj == request.user
+        return obj.owner == request.user
 
 
 class CustomLimitOffsetPagination(LimitOffsetPagination):
@@ -81,6 +81,7 @@ class AbstractCustomViewSet(FlexFieldsModelViewSet):
 
         e.g.  https://api.example.org/galaxies/?limit=40&offset=400
     """
+
     permission_classes = (IsAuthenticatedOrReadOnly, IsOwnerOfObjectOrReadOnly,)
     pagination_class = CustomLimitOffsetPagination
 
