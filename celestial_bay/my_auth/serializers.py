@@ -116,9 +116,7 @@ class ChangePasswordSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
 
         if not user.check_password(value):
-            raise serializers.ValidationError(
-                {'old_password': "Old password is not correct."}
-            )
+            raise serializers.ValidationError("Old password is not correct.")
 
         return value
 
@@ -127,7 +125,7 @@ class ChangePasswordSerializer(serializers.ModelSerializer):
 
         if user.pk != instance.pk:
             raise serializers.ValidationError(
-                {'authorize': 'You do not have permission for this user.'}
+                {'authorization': 'You do not have permission for this user.'}
             )
 
         instance.set_password(validated_data['password'])
@@ -161,9 +159,7 @@ class UpdateUserSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
 
         if User.objects.exclude(pk=user.pk).filter(email=value).exists():
-            raise serializers.ValidationError(
-                {'email': 'This email is already in use.'}
-            )
+            raise serializers.ValidationError('This email is already in use.')
 
         return value
 
