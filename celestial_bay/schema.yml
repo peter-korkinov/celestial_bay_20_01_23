@@ -14,7 +14,8 @@ paths:
       - in: path
         name: id
         schema:
-          type: integer
+          type: string
+          format: uuid
         required: true
       tags:
       - auth
@@ -30,39 +31,6 @@ paths:
             schema:
               $ref: '#/components/schemas/ChangePassword'
         required: true
-      security:
-      - jwtAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ChangePassword'
-          description: ''
-    patch:
-      operationId: auth_change_password_partial_update
-      description: |-
-        For changing the password of an existing user.
-        It requires user to be authenticated.
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        required: true
-      tags:
-      - auth
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedChangePassword'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedChangePassword'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedChangePassword'
       security:
       - jwtAuth: []
       responses:
@@ -76,28 +44,29 @@ paths:
     post:
       operationId: auth_login_create
       description: |-
-        Takes a set of user credentials and returns an access and refresh JSON web
-        token pair to prove the authentication of those credentials.
+        Takes a set of user credentials and returns user info(id, first_name,
+        last_name, email), an access and refresh JSON web token pair to prove
+        the authentication of those credentials.
       tags:
       - auth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TokenObtainPair'
+              $ref: '#/components/schemas/CustomTokenObtainPair'
           application/x-www-form-urlencoded:
             schema:
-              $ref: '#/components/schemas/TokenObtainPair'
+              $ref: '#/components/schemas/CustomTokenObtainPair'
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/TokenObtainPair'
+              $ref: '#/components/schemas/CustomTokenObtainPair'
         required: true
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TokenObtainPair'
+                $ref: '#/components/schemas/CustomTokenObtainPair'
           description: ''
   /auth/login/refresh/:
     post:
@@ -159,7 +128,6 @@ paths:
         required: true
       security:
       - jwtAuth: []
-      - {}
       responses:
         '201':
           content:
@@ -177,7 +145,8 @@ paths:
       - in: path
         name: id
         schema:
-          type: integer
+          type: string
+          format: uuid
         required: true
       tags:
       - auth
@@ -193,39 +162,6 @@ paths:
             schema:
               $ref: '#/components/schemas/UpdateUser'
         required: true
-      security:
-      - jwtAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UpdateUser'
-          description: ''
-    patch:
-      operationId: auth_update_user_partial_update
-      description: |-
-        For updating user info.
-        It requires user to be authenticated.
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: integer
-        required: true
-      tags:
-      - auth
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedUpdateUser'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedUpdateUser'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedUpdateUser'
       security:
       - jwtAuth: []
       responses:
@@ -2504,6 +2440,21 @@ components:
       - constellation
       - image
       - pk
+    CustomTokenObtainPair:
+      type: object
+      description: |-
+        Extends the SimpleJWT's TokenObtainPairSerializer by adding user info(id,
+        first_name, last_name, email), beside the access and refresh tokens, to  the
+        response.
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+          writeOnly: true
+      required:
+      - email
+      - password
     Galaxy:
       type: object
       description: |-
@@ -2709,22 +2660,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Post'
-    PatchedChangePassword:
-      type: object
-      description: |-
-        For changing the password of an existing user.
-
-        old_password, password, password2 are required fields.
-      properties:
-        old_password:
-          type: string
-          writeOnly: true
-        password:
-          type: string
-          writeOnly: true
-        password2:
-          type: string
-          writeOnly: true
     PatchedComment:
       type: object
       description: |-
@@ -2852,22 +2787,6 @@ components:
         image:
           type: string
           format: uri
-    PatchedUpdateUser:
-      type: object
-      description: |-
-        For updating the info of a user.
-
-        Fields able to be updated: email, first_name, last_name.
-      properties:
-        email:
-          type: string
-          format: email
-        first_name:
-          type: string
-          maxLength: 150
-        last_name:
-          type: string
-          maxLength: 150
     Post:
       type: object
       description: |-
@@ -2952,26 +2871,6 @@ components:
       - last_name
       - password
       - password2
-    TokenObtainPair:
-      type: object
-      properties:
-        email:
-          type: string
-          writeOnly: true
-        password:
-          type: string
-          writeOnly: true
-        access:
-          type: string
-          readOnly: true
-        refresh:
-          type: string
-          readOnly: true
-      required:
-      - access
-      - email
-      - password
-      - refresh
     TokenRefresh:
       type: object
       properties:
