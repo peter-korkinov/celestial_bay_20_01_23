@@ -27,6 +27,7 @@ class ChangePasswordView(generics.UpdateAPIView):
     queryset = User.objects.all()
     permission_classes = (IsAuthenticated,)
     serializer_class = ChangePasswordSerializer
+    http_method_names = ['put']
 
 
 class UpdateUserView(generics.UpdateAPIView):
@@ -37,6 +38,7 @@ class UpdateUserView(generics.UpdateAPIView):
     queryset = User.objects.all()
     permission_classes = (IsAuthenticated,)
     serializer_class = UpdateUserSerializer
+    http_method_names = ['put']
 
 
 class LogoutView(APIView):
