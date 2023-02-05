@@ -4,10 +4,20 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import User
 from .serializers import RegisterSerializer, ChangePasswordSerializer, \
-    UpdateUserSerializer, UserSerializer
+    UpdateUserSerializer, UserSerializer, CustomTokenObtainPairSerializer
+
+
+class LoginView(TokenObtainPairView):
+    """
+    Takes a set of user credentials and returns user info(id, first_name,
+    last_name, email), an access and refresh JSON web token pair to prove
+    the authentication of those credentials.
+    """
+    serializer_class = CustomTokenObtainPairSerializer
 
 
 class RegisterView(generics.CreateAPIView):
