@@ -31,6 +31,15 @@ class IsOwnerOfObject(BasePermission):
         return obj == request.user
 
 
+class RegisterView(generics.CreateAPIView):
+    """
+    For registering new users.
+    """
+    queryset = User.objects.all()
+    permission_classes = (IsNotAuthenticated,)
+    serializer_class = RegisterSerializer
+
+
 class LoginView(TokenObtainPairView):
     """
     Takes a set of user credentials and returns user info(id, first_name,
