@@ -1,7 +1,7 @@
 from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, BasePermission
 
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -9,6 +9,26 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .models import User
 from .serializers import RegisterSerializer, ChangePasswordSerializer, \
     UpdateUserSerializer, UserSerializer, CustomTokenObtainPairSerializer
+
+
+class IsNotAuthenticated(BasePermission):
+    """
+    Allows access only to NOT authenticated users.
+    """
+
+    def has_permission(self, request, view):
+        return not bool(request.user and request.user.is_authenticated)
+
+
+class IsOwnerOfObject(BasePermission):
+    """
+    The request is from the owner of the object, or is a read-only request.
+
+    A custom permission class extending BasePermission.
+    """
+
+    def has_object_permission(self, request, view, obj):
+        return obj == request.user
 
 
 class LoginView(TokenObtainPairView):
@@ -20,22 +40,13 @@ class LoginView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
 
 
-class RegisterView(generics.CreateAPIView):
-    """
-    For registering new users.
-    """
-    queryset = User.objects.all()
-    permission_classes = (AllowAny,)
-    serializer_class = RegisterSerializer
-
-
 class ChangePasswordView(generics.UpdateAPIView):
     """
     For changing the password of an existing user.
     It requires user to be authenticated.
     """
     queryset = User.objects.all()
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, IsOwnerOfObject)
     serializer_class = ChangePasswordSerializer
     http_method_names = ['put']
 
@@ -79,7 +90,7 @@ class LogoutView(APIView):
 class UserView(generics.RetrieveAPIView):
     """
     For getting a user's info.
-    
+
     It inherits from generics.RetrieveAPIView and supports GET queries only for
     single user by user id.
     """
