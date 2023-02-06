@@ -598,39 +598,6 @@ paths:
       responses:
         '204':
           description: No response body
-  /constellation_images/:
-    get:
-      operationId: constellation_images_list
-      description: |-
-        A viewset that provides read only functionality for the ConstellationImage model.
-
-        All other actions(create, update, destroy, etc.) are going to be available
-        to superusers only through the admin panel.
-      parameters:
-      - name: limit
-        required: false
-        in: query
-        description: Number of results to return per page.
-        schema:
-          type: integer
-      - name: offset
-        required: false
-        in: query
-        description: The initial index from which to return the results.
-        schema:
-          type: integer
-      tags:
-      - constellation_images
-      security:
-      - jwtAuth: []
-      - {}
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PaginatedConstellationImageList'
-          description: ''
   /constellation_images/{id}/:
     get:
       operationId: constellation_images_retrieve
@@ -2406,6 +2373,10 @@ components:
         control which fields are displayed, and whether to replace simple
         values with complex, nested serializations
       properties:
+        pk:
+          type: integer
+          readOnly: true
+          title: ID
         name:
           type: string
           maxLength: 32
@@ -2419,6 +2390,7 @@ components:
       - abbreviation
       - area_in_sq_deg
       - name
+      - pk
     ConstellationImage:
       type: object
       description: |-
@@ -2540,26 +2512,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Comment'
-    PaginatedConstellationImageList:
-      type: object
-      properties:
-        count:
-          type: integer
-          example: 123
-        next:
-          type: string
-          nullable: true
-          format: uri
-          example: http://api.example.org/accounts/?offset=400&limit=100
-        previous:
-          type: string
-          nullable: true
-          format: uri
-          example: http://api.example.org/accounts/?offset=200&limit=100
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConstellationImage'
     PaginatedConstellationList:
       type: object
       properties:
