@@ -1,5 +1,6 @@
+from rest_framework.mixins import RetrieveModelMixin
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, BasePermission
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.viewsets import ReadOnlyModelViewSet, GenericViewSet
 from rest_framework.pagination import LimitOffsetPagination
 
 from rest_flex_fields import is_expanded
@@ -110,10 +111,13 @@ class ConstellationViewSet(FlexFieldsMixin, ReadOnlyModelViewSet):
         if is_expanded(self.request, 'galaxies'):
             queryset = queryset.prefetch_related('galaxies')
 
+        if is_expanded(self.request, 'images'):
+            queryset = queryset.prefetch_related('images')
+
         return queryset
 
 
-class ConstellationImageViewSet(FlexFieldsMixin, ReadOnlyModelViewSet):
+class ConstellationImageViewSet(FlexFieldsMixin, RetrieveModelMixin, GenericViewSet):
     """
     A viewset that provides read only functionality for the ConstellationImage model.
 
