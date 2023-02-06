@@ -8,7 +8,11 @@ from .models import Constellation, ConstellationImage, Galaxy, GalaxyImage,\
 class ConstellationSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Constellation
-        fields = ['name', 'abbreviation', 'area_in_sq_deg']
+        fields = ['pk', 'name', 'abbreviation', 'area_in_sq_deg']
+        expandable_fields = {
+            'images': ('galaxies.ConstellationImageSerializer', {'many': True}),
+            'galaxies': ('galaxies.GalaxySerializer', {'many': True}),
+        }
 
 
 class ConstellationImageSerializer(FlexFieldsModelSerializer):
