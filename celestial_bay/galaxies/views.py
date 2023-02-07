@@ -102,7 +102,7 @@ class ConstellationViewSet(FlexFieldsMixin, ReadOnlyModelViewSet):
     """
 
     serializer_class = ConstellationSerializer
-    permit_list_expands = ['galaxies']
+    permit_list_expands = ['galaxies', 'images']
     pagination_class = CustomLimitOffsetPagination
 
     def get_queryset(self):
@@ -159,7 +159,7 @@ class PostViewSet(AbstractCustomViewSet):
     __doc__ += AbstractCustomViewSet.__doc__
 
     serializer_class = PostSerializer
-    permit_list_expands = ['images']
+    permit_list_expands = ['images', 'comments']
 
     def get_queryset(self):
         queryset = Post.objects.all()
