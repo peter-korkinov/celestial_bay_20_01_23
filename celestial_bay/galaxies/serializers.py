@@ -44,7 +44,7 @@ class GalaxyImageSerializer(FlexFieldsModelSerializer):
 class PostSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Post
-        fields = ['pk', 'title', 'content', 'created', 'updated', 'author']
+        fields = ['pk', 'title', 'content', 'created', 'updated', 'owner']
         expandable_fields = {
             'images': ('galaxies.PostImageSerializer', {'many': True}),
             'comments': ('galaxies.CommentSerializer', {'many': True}),
@@ -62,4 +62,4 @@ class PostImageSerializer(FlexFieldsModelSerializer):
 class CommentSerializer(FlexFieldsModelSerializer):
     class Meta:
         model = Comment
-        fields = ['pk', 'content', 'created', 'updated', 'post', 'author']
+        fields = ['pk', 'content', 'created', 'updated', 'post', 'owner']

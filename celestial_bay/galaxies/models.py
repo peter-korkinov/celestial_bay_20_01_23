@@ -75,7 +75,7 @@ class Post(models.Model):
     content = models.TextField()
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
-    author = models.ForeignKey(
+    owner = models.ForeignKey(
         User,
         null=True,
         on_delete=models.SET_NULL,
@@ -112,7 +112,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='comments'
     )
-    author = models.ForeignKey(
+    owner = models.ForeignKey(
         User,
         null=True,
         on_delete=models.SET_NULL,
