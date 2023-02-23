@@ -83,7 +83,7 @@ class Post(models.Model):
     )
 
     def __str__(self):
-        return f'{self.pk} - {self.title} - by - {self.author.get_full_name()}'
+        return f'{self.pk} - {self.title} - by - {self.owner.get_full_name()}'
 
 
 class PostImage(models.Model):
