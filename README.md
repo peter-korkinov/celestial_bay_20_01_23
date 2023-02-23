@@ -38,24 +38,31 @@ or simply download using the url:
 Then open the main project directory in terminal and run:
 
 ```bash
-pip install -r requirements.txt
+pip install virtualenv # if you don't already have virtualenv installed
+```
+```bash
+virtualenv venv # to create your new environment(called 'venv' here)
+```
+```bash
+venv/Source/activate # to enter the virtual environment
+```
+```bash
+pip install -r requirements.txt # to install requirements in the current environment
+```
+
+```bash 
+python manage.py makemigrations # to makemigrations
+```
+```bash
+python manage.py migrate # to migrate
 ```
 &nbsp;
 
 
-To run the program in local server use the following command
+Then finally to run the project in local server use the following command:
 ```bash
 python manage.py runserver
 ```
-If you encounter
-```
-ImportError('failed to find libmagic.  Check your installation')
-```
-you can try
-```
-pip uninstall python-magic
-```
-&nbsp;
 
 
 Then go to [http://localhost:8000/](http://localhost:8000/) in your browser
@@ -66,13 +73,6 @@ To access the **OpenAPI** documentation open:
 &nbsp;
 
 
-### To migrate the database
-
-```bash 
-python manage.py makemigrations
-python manage.py migrate
-```
-&nbsp;
 
 ### To use admin panel you need to create superuser using this command
 
